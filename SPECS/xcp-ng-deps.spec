@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        7.5.0
-Release:        1
+Release:        2
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -114,7 +114,6 @@ Requires: vconfig
 Requires: vcputune
 Requires: vendor-drivers
 Requires: vendor-update-keys
-Requires: vgpu
 Requires: vhd-tool
 Requires: vhostmd
 Requires: vncsnapshot
