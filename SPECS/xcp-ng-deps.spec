@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        7.5.0
-Release:        2
+Release:        3
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -149,6 +149,8 @@ Requires: xha
 Requires: xsconsole
 Requires: yum
 Requires: zip
+
+Obsoletes: vgpu < 7.3.3
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
