@@ -132,7 +132,6 @@ Requires: xcp-ng-pv-tools
 Requires: xcp-ng-release
 Requires: xcp-ng-release-config
 Requires: xcp-ng-updater
-Requires: xcp-python-libs-xenserver
 Requires: xcp-rrdd
 Requires: xdelta
 Requires: xen-crashdump-analyser
