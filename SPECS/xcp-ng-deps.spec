@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
-Version:        7.5.0
-Release:        3
+Version:        7.6.0
+Release:        1
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -10,8 +10,8 @@ BuildArch:      noarch
 
 # Unversioned requires, sorted alphabetically
 # Extracted from groups.xml
-Requires: QCS-CLI
-Requires: QConvergeConsoleCLI-Citrix
+#Requires: QCS-CLI
+#Requires: QConvergeConsoleCLI-Citrix
 Requires: aic94xx-firmware
 Requires: bash-completion
 Requires: blktap
@@ -27,7 +27,7 @@ Requires: dlm
 Requires: dracut-network
 Requires: e2fsprogs
 Requires: efibootmgr
-Requires: elxocmcore
+#Requires: elxocmcore
 Requires: expect
 Requires: fcoe-utils
 Requires: fontconfig
@@ -54,7 +54,7 @@ Requires: libempserver
 Requires: linux-firmware
 Requires: linux-guest-loader
 Requires: linux-guest-loader-data
-Requires: livepatch-utils
+#Requires: livepatch-utils
 Requires: lsof
 Requires: makedumpfile
 Requires: mcelog
@@ -161,5 +161,8 @@ packages needed by the newer version of XCP-ng.
 %files
 
 %changelog
+* Fri Sep 14 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-1
+* Update for XCP-ng 7.6.0, work in progress
+
 * Wed Jul 25 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.5.0-1
 - Initial package
