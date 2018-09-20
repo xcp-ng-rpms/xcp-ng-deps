@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        7.6.0
-Release:        1
+Release:        2
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -10,8 +10,6 @@ BuildArch:      noarch
 
 # Unversioned requires, sorted alphabetically
 # Extracted from groups.xml
-#Requires: QCS-CLI
-#Requires: QConvergeConsoleCLI-Citrix
 Requires: aic94xx-firmware
 Requires: bash-completion
 Requires: blktap
@@ -27,7 +25,6 @@ Requires: dlm
 Requires: dracut-network
 Requires: e2fsprogs
 Requires: efibootmgr
-#Requires: elxocmcore
 Requires: expect
 Requires: fcoe-utils
 Requires: fontconfig
@@ -54,7 +51,6 @@ Requires: libempserver
 Requires: linux-firmware
 Requires: linux-guest-loader
 Requires: linux-guest-loader-data
-#Requires: livepatch-utils
 Requires: lsof
 Requires: makedumpfile
 Requires: mcelog
@@ -149,7 +145,19 @@ Requires: xsconsole
 Requires: yum
 Requires: zip
 
+# Obsolete package to be removed during upgrade to 7.5 or higher
 Obsoletes: vgpu < 7.3.3
+
+# Obsolete packages to be removed during upgrade to 7.6 or higher
+Obsoletes: QCS-CLI <= 30.0.22-0
+Obsoletes: QConvergeConsoleCLI-Citrix <= 2.0.00-24.3.xcp
+Obsoletes: elxocmcore <= 11.1.218.4-1
+Obsoletes: elxocmcorelibs <= 11.1.218.4-1
+Obsoletes: elxocmlibhbaapi <= 11.1.218.4-1
+Obsoletes: livepatch-utils <= 1.1.0-1
+Obsoletes: sm-transport-lib < 0.11.0
+Obsoletes: xapi-clusterd < 0.26.0
+Obsoletes: xapi-storage-plugins < 1.23.0
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -160,8 +168,11 @@ packages needed by the newer version of XCP-ng.
 %files
 
 %changelog
+* Thu Sep 20 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-2
+- Obsolete packages to be removed during upgrade to 7.6 or higher
+
 * Fri Sep 14 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-1
-* Update for XCP-ng 7.6.0, work in progress
+- Update for XCP-ng 7.6.0, work in progress
 
 * Wed Jul 25 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.5.0-1
 - Initial package
