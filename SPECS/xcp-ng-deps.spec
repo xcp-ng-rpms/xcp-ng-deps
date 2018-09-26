@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        7.6.0
-Release:        2
+Release:        3
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -145,6 +145,8 @@ Requires: xsconsole
 Requires: yum
 Requires: zip
 
+Requires(post): sed
+
 # Obsolete package to be removed during upgrade to 7.5 or higher
 Obsoletes: vgpu < 7.3.3
 
@@ -164,6 +166,14 @@ This package has dependencies to all the packages that make a XCP-ng server.
 
 Keep it installed to make sure that future updates will pull additional
 packages needed by the newer version of XCP-ng.
+
+%post
+if [ $1 -gt 1 ]; then
+    if [ -f /etc/sysconfig/dlm ]; then
+        # Remove line wrongly added by xapi-storage-plugins to /etc/sysconfig/dlm in 7.5
+        sed -i /etc/sysconfig/dlm -e '/^@DLM_CONFIG@/ d'
+    fi
+fi
 
 %files
 
