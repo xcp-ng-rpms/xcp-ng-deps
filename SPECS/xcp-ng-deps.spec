@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        7.6.0
-Release:        3
+Release:        4
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -151,11 +151,6 @@ Requires(post): sed
 Obsoletes: vgpu < 7.3.3
 
 # Obsolete packages to be removed during upgrade to 7.6 or higher
-Obsoletes: QCS-CLI <= 30.0.22-0
-Obsoletes: QConvergeConsoleCLI-Citrix <= 2.0.00-24.3.xcp
-Obsoletes: elxocmcore <= 11.1.218.4-1
-Obsoletes: elxocmcorelibs <= 11.1.218.4-1
-Obsoletes: elxocmlibhbaapi <= 11.1.218.4-1
 Obsoletes: livepatch-utils <= 1.1.0-1
 Obsoletes: sm-transport-lib < 0.11.0
 Obsoletes: xapi-clusterd < 0.26.0
@@ -178,6 +173,10 @@ fi
 %files
 
 %changelog
+* Wed Oct 03 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-4
+- Don't obsolete QLogic and Emulex packages, so that it's still
+  possible to install them from the vendors' sites.
+
 * Thu Sep 20 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-2
 - Obsolete packages to be removed during upgrade to 7.6 or higher
 
