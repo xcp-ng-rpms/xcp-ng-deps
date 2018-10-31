@@ -166,6 +166,8 @@ packages needed by the newer version of XCP-ng.
 if [ $1 -gt 1 ]; then
     if [ -f /etc/sysconfig/dlm ]; then
         # Remove line wrongly added by xapi-storage-plugins to /etc/sysconfig/dlm in 7.5
+        # In XS fixing this is handled by the scriptlets in xapi-storage-plugins RPM
+        # But in 7.6 it has become proprietary so we have to do it ourselves here.
         sed -i /etc/sysconfig/dlm -e '/^@DLM_CONFIG@/ d'
     fi
 fi
