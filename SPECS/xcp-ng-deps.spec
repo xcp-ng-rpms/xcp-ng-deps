@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
-Version:        7.6.0
-Release:        4
+Version:        8.0.0
+Release:        1
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -43,6 +43,7 @@ Requires: host-upgrade-plugin
 Requires: interface-rename
 Requires: ipmitool
 Requires: ipset
+Requires: iptables
 Requires: irqbalance
 Requires: iscsi-initiator-utils
 Requires: kbd
@@ -106,6 +107,8 @@ Requires: tcpdump
 Requires: telnet
 Requires: unzip
 Requires: usbutils
+Requires: varstored
+Requires: varstored-tools
 Requires: vconfig
 Requires: vcputune
 Requires: vendor-drivers
@@ -122,7 +125,6 @@ Requires: xapi-storage-script
 Requires: xapi-tests
 Requires: xcp-featured
 Requires: xcp-networkd
-Requires: xcp-ng-center
 Requires: xcp-ng-plymouth-theme
 Requires: xcp-ng-pv-tools
 Requires: xcp-ng-release
@@ -131,10 +133,7 @@ Requires: xcp-ng-updater
 Requires: xcp-rrdd
 Requires: xdelta
 Requires: xen-crashdump-analyser
-Requires: xen-device-model
-Requires: xengt-modules
 Requires: xenopsd-xc
-Requires: xenopsd-xenlight
 Requires: xenserver-dracut
 Requires: xenserver-firstboot
 Requires: xenserver-hwdata
@@ -156,6 +155,12 @@ Obsoletes: sm-transport-lib < 0.11.0
 Obsoletes: xapi-clusterd < 0.26.0
 Obsoletes: xapi-storage-plugins < 1.23.0
 
+# Obsolete packages to be removed during upgrade to 8.0 or higher
+Obsoletes: xen-device-model <= 0.10.3
+Obsoletes: xengt-modules <= 4.0.0
+Obsoletes: xenopsd-xenlight <= 0.66.0
+Obsoletes: xcp-ng-center < 8.0
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -175,6 +180,12 @@ fi
 %files
 
 %changelog
+* Thu May 02 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-1
+- Update for XCP-ng 8.0.0
+- Added iptables, varstored and varstored-tools to Requires
+- Removed xen-device-model, xengt-modules, xenopsd-xenlight and xcp-ng-center from Requires
+- Obsoleted those packages
+
 * Wed Oct 03 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-4
 - Don't obsolete QLogic and Emulex packages, so that it's still
   possible to install them from the vendors' sites.
