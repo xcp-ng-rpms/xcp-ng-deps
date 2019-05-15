@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.0.0
-Release:        1
+Release:        2
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -101,7 +101,6 @@ Requires: sudo
 Requires: sysfsutils
 Requires: sysstat
 Requires: system-config-firewall-tui
-Requires: systemd-networkd
 Requires: systemtap-runtime
 Requires: tcpdump
 Requires: telnet
@@ -160,6 +159,7 @@ Obsoletes: xen-device-model <= 0.10.3
 Obsoletes: xengt-modules <= 4.0.0
 Obsoletes: xenopsd-xenlight <= 0.66.0
 Obsoletes: xcp-ng-center < 8.0
+Obsoletes: systemd-networkd < 219-20
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -180,10 +180,11 @@ fi
 %files
 
 %changelog
-* Thu May 02 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-1
+* Thu May 02 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-2
 - Update for XCP-ng 8.0.0
 - Added iptables, varstored and varstored-tools to Requires
 - Removed xen-device-model, xengt-modules, xenopsd-xenlight and xcp-ng-center from Requires
+- Removed systemd-networkd from Requires
 - Obsoleted those packages
 
 * Wed Oct 03 2018 Samuel Verschelde <stormi-xcp@ylix.fr> - 7.6.0-4
