@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.0.0
-Release:        2
+Release:        3
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -128,7 +128,7 @@ Requires: xcp-ng-plymouth-theme
 Requires: xcp-ng-pv-tools
 Requires: xcp-ng-release
 Requires: xcp-ng-release-config
-Requires: xcp-ng-updater
+Requires: xcp-ng-xapi-plugins
 Requires: xcp-rrdd
 Requires: xdelta
 Requires: xen-crashdump-analyser
@@ -180,6 +180,9 @@ fi
 %files
 
 %changelog
+* Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-3
+- Renamed xcp-ng-updater to xcp-ng-xapi-plugins
+
 * Thu May 02 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-2
 - Update for XCP-ng 8.0.0
 - Added iptables, varstored and varstored-tools to Requires
