@@ -40,7 +40,6 @@ Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
 Requires: guest-templates-json-data-xenapp
 Requires: host-upgrade-plugin
-Requires: htop
 Requires: interface-rename
 Requires: ipmitool
 Requires: ipset
@@ -146,6 +145,11 @@ Requires: zip
 
 Requires(post): sed
 
+# Additional niceties
+Requires: cryptsetup
+Requires: htop
+Requires: iftop
+
 # Obsolete package to be removed during upgrade to 7.5 or higher
 Obsoletes: vgpu < 7.3.3
 
@@ -182,7 +186,7 @@ fi
 
 %changelog
 * Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-4
-- Add htop
+- Add htop, iftop and cryptsetup
 
 * Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-3
 - Renamed xcp-ng-updater to xcp-ng-xapi-plugins
