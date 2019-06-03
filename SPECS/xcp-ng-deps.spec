@@ -40,6 +40,7 @@ Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
 Requires: guest-templates-json-data-xenapp
 Requires: host-upgrade-plugin
+Requires: htop
 Requires: interface-rename
 Requires: ipmitool
 Requires: ipset
@@ -180,6 +181,9 @@ fi
 %files
 
 %changelog
+* Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-4
+- Add htop
+
 * Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-3
 - Renamed xcp-ng-updater to xcp-ng-xapi-plugins
 
