@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.0.0
-Release:        4
+Release:        5
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -149,6 +149,7 @@ Requires(post): sed
 Requires: cryptsetup
 Requires: htop
 Requires: iftop
+Requires: yum-utils
 
 # Obsolete package to be removed during upgrade to 7.5 or higher
 Obsoletes: vgpu < 7.3.3
@@ -185,6 +186,9 @@ fi
 %files
 
 %changelog
+* Tue Jun 25 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-5
+- Add yum-utils
+
 * Mon Jun 03 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-4
 - Add htop, iftop and cryptsetup
 
