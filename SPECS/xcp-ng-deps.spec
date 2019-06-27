@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.0.0
-Release:        5
+Release:        6
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -48,6 +48,7 @@ Requires: irqbalance
 Requires: iscsi-initiator-utils
 Requires: kbd
 Requires: kexec-tools
+Requires: kpatch
 Requires: libempserver
 Requires: linux-firmware
 Requires: linux-guest-loader
@@ -186,6 +187,10 @@ fi
 %files
 
 %changelog
+* Thu Jun 27 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-6
+- Add kpatch back
+- See https://github.com/xcp-ng/xcp/issues/209
+
 * Tue Jun 25 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-5
 - Add yum-utils
 
