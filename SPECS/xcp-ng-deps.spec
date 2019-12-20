@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
-Version:        8.0.0
-Release:        6
+Version:        8.1.0
+Release:        1
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -15,11 +15,11 @@ Requires: bash-completion
 Requires: blktap
 Requires: bugtool-conn-tests
 Requires: bzip2
+Requires: chrony
 Requires: cifs-utils
 Requires: compat-db47
 Requires: compat-libstdc++-33
 Requires: control-slice
-Requires: conversion-plugin
 Requires: cronie-noanacron
 Requires: dlm
 Requires: dracut-network
@@ -63,7 +63,6 @@ Requires: module-init-tools
 Requires: nano
 Requires: net-snmp
 Requires: nfs-utils
-Requires: ntp
 Requires: ocaml-xenops-tools
 Requires: openssh-clients
 Requires: openssh-server
@@ -168,6 +167,12 @@ Obsoletes: xenopsd-xenlight <= 0.66.0
 Obsoletes: xcp-ng-center < 8.0
 Obsoletes: systemd-networkd < 219-20
 
+# Obsolete packages to be removed during upgrade to 8.1 or higher
+Obsoletes: conversion-plugin
+Obsoletes: ntp <= 4.2.6p5-999.el7.centos
+Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
+Obsoletes: autogen-libopts <= 5.18-999.el7
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -187,6 +192,9 @@ fi
 %files
 
 %changelog
+* Fri Dec 20 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-1
+- Update for XCP-ng 8.1
+
 * Thu Jun 27 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.0.0-6
 - Add kpatch back
 - See https://github.com/xcp-ng/xcp/issues/209
