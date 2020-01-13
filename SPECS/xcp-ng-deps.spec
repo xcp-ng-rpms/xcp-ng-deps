@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        1
+Release:        2
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -106,8 +106,9 @@ Requires: tcpdump
 Requires: telnet
 Requires: unzip
 Requires: usbutils
-Requires: varstored
-Requires: varstored-tools
+# Temporarily remove dependency to varstored
+#Requires: varstored
+#Requires: varstored-tools
 Requires: vconfig
 Requires: vcputune
 Requires: vendor-drivers
@@ -192,6 +193,9 @@ fi
 %files
 
 %changelog
+* Mon Jan 13 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-2
+- Temporarily remove dependency to varstored and varstored-tools
+
 * Fri Dec 20 2019 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-1
 - Update for XCP-ng 8.1
 
