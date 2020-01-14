@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        2
+Release:        3
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -172,7 +172,6 @@ Obsoletes: systemd-networkd < 219-20
 Obsoletes: conversion-plugin
 Obsoletes: ntp <= 4.2.6p5-999.el7.centos
 Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
-Obsoletes: autogen-libopts <= 5.18-999.el7
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -193,6 +192,9 @@ fi
 %files
 
 %changelog
+* Tue Jan 14 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-3
+- Do not obsolete autogen-libopts, we need it
+
 * Mon Jan 13 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-2
 - Temporarily remove dependency to varstored and varstored-tools
 
