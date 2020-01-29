@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        4
+Release:        5
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -32,7 +32,6 @@ Requires: gdisk
 Requires: gfs2-utils
 Requires: gnu-free-sans-fonts
 Requires: gnupg
-Requires: gpumon
 Requires: grub
 Requires: grub-efi
 Requires: guest-templates-json-data-linux
@@ -191,6 +190,9 @@ fi
 %files
 
 %changelog
+* Wed Jan 29 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-5
+- Remove gpumon
+
 * Mon Jan 20 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-4
 - Re-add varstored and varstored-tools
 
