@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        5
+Release:        6
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -170,6 +170,7 @@ Obsoletes: systemd-networkd < 219-20
 Obsoletes: conversion-plugin
 Obsoletes: ntp <= 4.2.6p5-999.el7.centos
 Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
+Obsoletes: gpumon <= 0.15.0-1.el7.centos
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -190,6 +191,9 @@ fi
 %files
 
 %changelog
+* Tue Feb 04 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-6
+- Obsolete gpumon to avoid upgrade failures
+
 * Wed Jan 29 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-5
 - Remove gpumon
 
