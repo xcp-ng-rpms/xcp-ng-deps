@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        6
+Release:        7
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -180,17 +180,32 @@ packages needed by the newer version of XCP-ng.
 
 %post
 if [ $1 -gt 1 ]; then
-    if [ -f /etc/sysconfig/dlm ]; then
-        # Remove line wrongly added by xapi-storage-plugins to /etc/sysconfig/dlm in 7.5
-        # In XS fixing this is handled by the scriptlets in xapi-storage-plugins RPM
-        # But in 7.6 it has become proprietary so we have to do it ourselves here.
-        sed -i /etc/sysconfig/dlm -e '/^@DLM_CONFIG@/ d'
+    > %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update
+fi
+
+%posttrans
+if [ -e %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update ]; then
+    # Update from 8.0: fix systemd symlinks
+    # REVIEW ME NEXT UPGRADE SINCE CITRIX WILL HAVE FIXED IT DIFFERENTLY
+    rm %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update
+    systemctl enable chronyd.service || :
+    systemctl enable chrony-wait.service || :
+    systemctl enable vm.slice || :
+    systemctl enable sm-mpath-root.service || :
+    # rsyslog.service symlink may be wrong
+    if [ readlink /etc/systemd/system/multi-user.target.wants/rsyslog.service == "/usr/lib/systemd/system/rsyslog.service" ]; then
+        systemctl disable rsyslog || :
+        systemctl enable rsyslog || :
     fi
 fi
 
 %files
 
 %changelog
+* Wed Mar 25 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-7
+- Fix missing or wrong systemd symlinks after an update (CH upstream bug)
+- Remove old POST script, not needed in 8.x anymore
+
 * Tue Feb 04 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-6
 - Obsolete gpumon to avoid upgrade failures
 
