@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        7
+Release:        8
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -193,7 +193,8 @@ if [ -e %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update ]; 
     systemctl enable vm.slice || :
     systemctl enable sm-mpath-root.service || :
     # rsyslog.service symlink may be wrong
-    if [ readlink /etc/systemd/system/multi-user.target.wants/rsyslog.service == "/usr/lib/systemd/system/rsyslog.service" ]; then
+    LINK=$(readlink /etc/systemd/system/multi-user.target.wants/rsyslog.service)
+    if [ "$LINK" == "/usr/lib/systemd/system/rsyslog.service" ]; then
         systemctl disable rsyslog || :
         systemctl enable rsyslog || :
     fi
@@ -202,7 +203,7 @@ fi
 %files
 
 %changelog
-* Wed Mar 25 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-7
+* Wed Mar 25 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-8
 - Fix missing or wrong systemd symlinks after an update (CH upstream bug)
 - Remove old POST script, not needed in 8.x anymore
 
