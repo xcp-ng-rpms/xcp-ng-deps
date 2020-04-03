@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        8
+Release:        9
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -142,6 +142,9 @@ Requires: xsconsole
 Requires: yum
 Requires: zip
 
+# XAPI currently chokes on nvidia GPUs without that package
+Requires: gpumon
+
 Requires(post): sed
 
 # Additional niceties
@@ -170,7 +173,6 @@ Obsoletes: systemd-networkd < 219-20
 Obsoletes: conversion-plugin
 Obsoletes: ntp <= 4.2.6p5-999.el7.centos
 Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
-Obsoletes: gpumon <= 0.15.0-1.el7.centos
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -203,6 +205,9 @@ fi
 %files
 
 %changelog
+* Fri Apr 03 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-9
+- Restore dependency to gpumon. XAPI chokes on nvidia gpus without it
+
 * Wed Mar 25 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-8
 - Fix missing or wrong systemd symlinks after an update (CH upstream bug)
 - Remove old POST script, not needed in 8.x anymore
