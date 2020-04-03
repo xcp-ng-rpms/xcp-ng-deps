@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.1.0
-Release:        9
+Release:        10
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -190,23 +190,23 @@ if [ -e %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update ]; 
     # Update from 8.0: fix systemd symlinks
     # REVIEW ME NEXT UPGRADE SINCE CITRIX WILL HAVE FIXED IT DIFFERENTLY
     rm %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update
-    systemctl enable chronyd.service || :
-    systemctl enable chrony-wait.service || :
-    systemctl enable vm.slice || :
-    systemctl enable sm-mpath-root.service || :
+    systemctl enable vm.slice >/dev/null 2>&1 || :
+    systemctl enable sm-mpath-root.service >/dev/null 2>&1 || :
     # rsyslog.service symlink may be wrong
     LINK=$(readlink /etc/systemd/system/multi-user.target.wants/rsyslog.service)
     if [ "$LINK" == "/usr/lib/systemd/system/rsyslog.service" ]; then
-        systemctl disable rsyslog || :
-        systemctl enable rsyslog || :
+        systemctl disable rsyslog >/dev/null 2>&1 || :
+        systemctl enable rsyslog >/dev/null 2>&1 || :
     fi
 fi
 
 %files
 
 %changelog
-* Fri Apr 03 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-9
+* Fri Apr 03 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-10
 - Restore dependency to gpumon. XAPI chokes on nvidia gpus without it
+- Don't enable the chronyd and chrony-wait services here anymore
+- (It's now done as a triggerin in xcp-ng-release-config)
 
 * Wed Mar 25 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-8
 - Fix missing or wrong systemd symlinks after an update (CH upstream bug)
