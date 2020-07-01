@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
-Version:        8.1.0
-Release:        10
+Version:        8.2.0
+Release:        1
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -31,16 +31,16 @@ Requires: fontconfig
 Requires: gdisk
 Requires: gfs2-utils
 Requires: gnu-free-sans-fonts
-Requires: gnupg
+Requires: gnupg2
 Requires: grub
 Requires: grub-efi
 Requires: guest-templates-json-data-linux
 Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
-Requires: guest-templates-json-data-xenapp
 Requires: host-upgrade-plugin
 Requires: interface-rename
 Requires: ipmitool
+Requires: iproute-tc
 Requires: ipset
 Requires: iptables
 Requires: irqbalance
@@ -62,7 +62,6 @@ Requires: module-init-tools
 Requires: nano
 Requires: net-snmp
 Requires: nfs-utils
-Requires: ocaml-xenops-tools
 Requires: openssh-clients
 Requires: openssh-server
 Requires: openssl-perl
@@ -95,7 +94,7 @@ Requires: sm-rawhba
 Requires: smartmontools
 Requires: squeezed
 Requires: strace
-Requires: stunnel_xs
+Requires: stunnel
 Requires: sudo
 Requires: sysfsutils
 Requires: sysstat
@@ -133,12 +132,12 @@ Requires: xdelta
 Requires: xen-crashdump-analyser
 Requires: xenopsd-xc
 Requires: xenserver-dracut
-Requires: xenserver-firstboot
 Requires: xenserver-hwdata
 Requires: xenserver-status-report
 Requires: xenserver-transfer-vm
 Requires: xha
 Requires: xsconsole
+Requires: xs-openssl
 Requires: yum
 Requires: zip
 
@@ -174,6 +173,9 @@ Obsoletes: conversion-plugin
 Obsoletes: ntp <= 4.2.6p5-999.el7.centos
 Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
 
+# Obsolete packages to be removed during upgrade to 8.2 or higher
+Obsoletes: xenserver-firstboot
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -203,6 +205,17 @@ fi
 %files
 
 %changelog
+* Wed Jul 01 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-1
+- Update for XCP-ng 8.2
+- First update of deps, to be refined after tests
+- Remove guest-templates-json-data-xenapp
+- Remove ocaml-xenops-tools
+- Remove and obsolete xenserver-firstboot
+- Add iproute-tc
+- Add xs-openssl
+- Replace stunnel_xs with stunnel
+- Replace gnupg with gnupg2
+
 * Fri Apr 03 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.1.0-10
 - Restore dependency to gpumon. XAPI chokes on nvidia gpus without it
 - Don't enable the chronyd and chrony-wait services here anymore
