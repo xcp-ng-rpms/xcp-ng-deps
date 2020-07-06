@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        1
+Release:        2
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -142,7 +142,8 @@ Requires: yum
 Requires: zip
 
 # XAPI currently chokes on nvidia GPUs without that package
-Requires: gpumon
+# 8.2 alpha: remove it while a solution is being worked on
+#Requires: gpumon
 
 Requires(post): sed
 
@@ -205,6 +206,9 @@ fi
 %files
 
 %changelog
+* Mon Jul 06 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-2
+- Remove dependency to gpumon for 8.2 alpha
+
 * Wed Jul 01 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-1
 - Update for XCP-ng 8.2
 - First update of deps, to be refined after tests
