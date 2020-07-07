@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        3
+Release:        4
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -137,7 +137,6 @@ Requires: xenserver-status-report
 Requires: xenserver-transfer-vm
 Requires: xha
 Requires: xsconsole
-Requires: xs-openssl
 Requires: yum
 Requires: zip
 
@@ -206,6 +205,9 @@ fi
 %files
 
 %changelog
+* Tue Jul 07 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-4
+- Remove dependecy to xs-openssl, it is only a build dep
+
 * Mon Jul 06 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-3
 - Remove dependency to varstored for 8.2 alpha
 
