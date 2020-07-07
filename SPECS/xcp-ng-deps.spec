@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        4
+Release:        5
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -87,6 +87,7 @@ Requires: rsyslog
 Requires: samba-client
 Requires: samba-winbind-clients
 Requires: screen
+Requires: security-tools
 Requires: sharutils
 Requires: sm
 Requires: sm-cli
@@ -116,6 +117,7 @@ Requires: vncsnapshot
 Requires: vncterm
 Requires: wget
 Requires: wsproxy
+Requires: xapi-xe
 Requires: xapi-nbd
 Requires: xapi-storage
 Requires: xapi-storage-script
@@ -130,6 +132,7 @@ Requires: xcp-ng-xapi-plugins
 Requires: xcp-rrdd
 Requires: xdelta
 Requires: xen-crashdump-analyser
+Requires: xenopsd-cli
 Requires: xenopsd-xc
 Requires: xenserver-dracut
 Requires: xenserver-hwdata
@@ -205,6 +208,12 @@ fi
 %files
 
 %changelog
+* Tue Jul 07 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-5
+- Require security-tools and xapi-xe, since they are...
+- ... not pulled by xenserver-firstboot anymore
+- Require xenospd-cli, not pulled by anything else...
+- ... (xenops-cli used to be pulled by xenopsd)
+
 * Tue Jul 07 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-4
 - Remove dependecy to xs-openssl, it is only a build dep
 
