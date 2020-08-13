@@ -217,7 +217,7 @@ fi
 - ... (xenops-cli used to be pulled by xenopsd)
 
 * Tue Jul 07 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-4
-- Remove dependecy to xs-openssl, it is only a build dep
+- Remove dependency to xs-openssl, it is only a build dep
 
 * Mon Jul 06 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-3
 - Remove dependency to varstored for 8.2 alpha
