@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        5
+Release:        6
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -105,8 +105,7 @@ Requires: tcpdump
 Requires: telnet
 Requires: unzip
 Requires: usbutils
-#Requires: varstored
-#Requires: varstored-tools
+Requires: uefistored
 Requires: vconfig
 Requires: vcputune
 Requires: vendor-drivers
@@ -208,6 +207,9 @@ fi
 %files
 
 %changelog
+* Thu Aug 13 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-6
+- Add dependency to uefistored
+
 * Tue Jul 07 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-5
 - Require security-tools and xapi-xe, since they are...
 - ... not pulled by xenserver-firstboot anymore
