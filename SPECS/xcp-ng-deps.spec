@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        7
+Release:        8
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -176,6 +176,7 @@ Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
 
 # Obsolete packages to be removed during upgrade to 8.2 or higher
 Obsoletes: xenserver-firstboot
+Obsoletes: xcp-ng-secureboot-certs <= 1.0.0-2
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -190,11 +191,12 @@ fi
 
 %posttrans
 if [ -e %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update ]; then
-    # Update from 8.0: fix systemd symlinks
-    # REVIEW ME NEXT UPGRADE SINCE CITRIX WILL HAVE FIXED IT DIFFERENTLY
     rm %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update
-    systemctl enable vm.slice >/dev/null 2>&1 || :
-    systemctl enable sm-mpath-root.service >/dev/null 2>&1 || :
+# XCP-ng 8.2: commented out, ough to be fixed upstream now
+#    # Update from 8.0: fix systemd symlinks
+#    # REVIEW ME NEXT UPGRADE SINCE CITRIX WILL HAVE FIXED IT DIFFERENTLY
+#    systemctl enable vm.slice >/dev/null 2>&1 || :
+#    systemctl enable sm-mpath-root.service >/dev/null 2>&1 || :
     # rsyslog.service symlink may be wrong
     LINK=$(readlink /etc/systemd/system/multi-user.target.wants/rsyslog.service)
     if [ "$LINK" == "/usr/lib/systemd/system/rsyslog.service" ]; then
@@ -206,6 +208,10 @@ fi
 %files
 
 %changelog
+* Fri Aug 14 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-8
+- Obsolete dummy xcp-ng-secureboot-certs, not required by varstored anymore
+- Comment out part of posttrans systemd services enabling, should now be fixed
+
 * Thu Aug 13 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-7
 - Re-add dependency to gpumon now that we built a stub one
 
