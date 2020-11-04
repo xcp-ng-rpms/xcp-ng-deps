@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        8
+Release:        9
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -87,7 +87,6 @@ Requires: rsyslog
 Requires: samba-client
 Requires: samba-winbind-clients
 Requires: screen
-Requires: security-tools
 Requires: sharutils
 Requires: sm
 Requires: sm-cli
@@ -177,6 +176,7 @@ Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
 # Obsolete packages to be removed during upgrade to 8.2 or higher
 Obsoletes: xenserver-firstboot
 Obsoletes: xcp-ng-secureboot-certs <= 1.0.0-2
+Obsoletes: security-tools
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -208,6 +208,9 @@ fi
 %files
 
 %changelog
+* Wed Nov 04 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-9
+- Remove security-tools RPM, not used in our context
+
 * Fri Aug 14 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-8
 - Obsolete dummy xcp-ng-secureboot-certs, not required by varstored anymore
 - Comment out part of posttrans systemd services enabling, should now be fixed
