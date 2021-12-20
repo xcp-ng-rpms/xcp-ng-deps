@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        10
+Release:        11
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -179,6 +179,9 @@ Obsoletes: xenserver-firstboot
 Obsoletes: xcp-ng-secureboot-certs <= 1.0.0-2
 Obsoletes: security-tools
 
+# Obsolete packages to be removed during update/upgrade to 8.2.1 or higher
+Obsoletes: xenserver-transfer-vm
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -209,6 +212,9 @@ fi
 %files
 
 %changelog
+* Mon Dec 20 2021 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-11
+- Sync with CH 8.2.1: obsolete xenserver-transfer-vm
+
 * Wed Nov 25 2020 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-10
 - Add dependency to varstored-tools
 - Related to https://github.com/xcp-ng/xcp/issues/458
