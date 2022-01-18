@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        11
+Release:        12
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -13,7 +13,6 @@ BuildArch:      noarch
 Requires: aic94xx-firmware
 Requires: bash-completion
 Requires: blktap
-Requires: bugtool-conn-tests
 Requires: bzip2
 Requires: chrony
 Requires: cifs-utils
@@ -136,7 +135,6 @@ Requires: xenopsd-xc
 Requires: xenserver-dracut
 Requires: xenserver-hwdata
 Requires: xenserver-status-report
-Requires: xenserver-transfer-vm
 Requires: xha
 Requires: xsconsole
 Requires: yum
@@ -212,6 +210,10 @@ fi
 %files
 
 %changelog
+* Tue Jan 18 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-12
+- Remove dep to bugtool-conn-test, obsoleted by xenserver-status-report
+- Remove dep to xenserver-transfer-vm, obsoleted by xcp-ng-deps itself
+
 * Mon Dec 20 2021 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-11
 - Sync with CH 8.2.1: obsolete xenserver-transfer-vm
 
