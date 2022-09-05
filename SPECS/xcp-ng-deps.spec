@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
-Version:        8.2.0
-Release:        12
+Version:        8.3
+Release:        1
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -56,7 +56,6 @@ Requires: makedumpfile
 Requires: mcelog
 Requires: mdadm
 Requires: memtest86+
-Requires: microcode_ctl
 Requires: module-init-tools
 Requires: nano
 Requires: net-snmp
@@ -67,7 +66,6 @@ Requires: openssl-perl
 Requires: openvswitch
 Requires: oprofile
 Requires: parted
-Requires: pbis-open
 Requires: plymouth
 Requires: plymouth-graphics-libs
 Requires: plymouth-plugin-script
@@ -79,7 +77,6 @@ Requires: python-fasteners
 Requires: redhat-lsb-core
 Requires: redhat-lsb-submod-security
 Requires: rootfiles
-Requires: rrd2csv
 Requires: rrdd-plugins
 Requires: rsync
 Requires: rsyslog
@@ -89,7 +86,6 @@ Requires: screen
 Requires: sharutils
 Requires: sm
 Requires: sm-cli
-Requires: sm-rawhba
 Requires: smartmontools
 Requires: squeezed
 Requires: strace
@@ -110,7 +106,6 @@ Requires: vcputune
 Requires: vendor-drivers
 Requires: vendor-update-keys
 Requires: vhd-tool
-Requires: vhostmd
 Requires: vncsnapshot
 Requires: vncterm
 Requires: wget
@@ -180,6 +175,12 @@ Obsoletes: security-tools
 # Obsolete packages to be removed during update/upgrade to 8.2.1 or higher
 Obsoletes: xenserver-transfer-vm
 
+# Obsolete packages to be removed during update/upgrade to 8.3.0 or higher
+Obsoletes: pbis-open-upgrade
+Obsoletes: pbis-open
+Obsoletes: sm-rawhba < 2.46
+Obsoletes: vhostmd < 0.5
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -210,6 +211,14 @@ fi
 %files
 
 %changelog
+* Mon Sep 05 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-1
+- Update to 8.3
+- Remove the third digit from the version
+- First batch of changes on Requires and Obsoletes
+- Removing Requires and obsoleting: pbis-open, pbis-open-upgrade, sm-rawhba, vhostmd
+- Removing Requires but already obsoleted elsewhere: microcode_ctl, rrd2csv
+- Requires NOT added for xapi-rrd2csv as rrdd-plugins already requires it
+
 * Tue Jan 18 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-12
 - Remove dep to bugtool-conn-test, obsoleted by xenserver-status-report
 - Remove dep to xenserver-transfer-vm, obsoleted by xcp-ng-deps itself
