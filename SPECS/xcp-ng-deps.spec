@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        2
+Release:        3
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -49,8 +49,6 @@ Requires: kexec-tools
 Requires: kpatch
 Requires: libempserver
 Requires: linux-firmware
-Requires: linux-guest-loader
-Requires: linux-guest-loader-data
 Requires: lsof
 Requires: makedumpfile
 Requires: mcelog
@@ -180,6 +178,8 @@ Obsoletes: pbis-open-upgrade
 Obsoletes: pbis-open
 Obsoletes: sm-rawhba < 2.46
 Obsoletes: vhostmd < 0.5
+Obsoletes: linux-guest-loader < 2.3.1-2
+Obsoletes: linux-guest-loader-data < 2.3.1-2
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -211,6 +211,9 @@ fi
 %files
 
 %changelog
+* Tue Dec 08 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-3
+- Remove and obsolete linux-guest-loader and linux-guest-loader-data
+
 * Tue Oct 25 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-2
 - Require varstored instead of uefistored
 
