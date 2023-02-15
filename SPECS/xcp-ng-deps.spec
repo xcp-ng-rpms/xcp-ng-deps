@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        3
+Release:        4
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -136,6 +136,9 @@ Requires: zip
 # XAPI chokes on nvidia GPUs without that package
 Requires: gpumon
 
+# host-installer needs this to be installed
+Requires: grubby
+
 Requires(post): sed
 
 # Additional niceties
@@ -211,6 +214,9 @@ fi
 %files
 
 %changelog
+* Wed Feb 15 2023 Yann Dirson <yann.dirson@vates.fr> - 8.3-4
+- Requires grubby
+
 * Tue Dec 08 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-3
 - Remove and obsolete linux-guest-loader and linux-guest-loader-data
 
