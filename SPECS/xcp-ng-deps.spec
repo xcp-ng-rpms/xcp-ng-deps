@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        4
+Release:        5
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -20,7 +20,6 @@ Requires: compat-db47
 Requires: compat-libstdc++-33
 Requires: control-slice
 Requires: cronie-noanacron
-Requires: dlm
 Requires: dracut-network
 Requires: e2fsprogs
 Requires: efibootmgr
@@ -183,6 +182,12 @@ Obsoletes: sm-rawhba < 2.46
 Obsoletes: vhostmd < 0.5
 Obsoletes: linux-guest-loader < 2.3.1-2
 Obsoletes: linux-guest-loader-data < 2.3.1-2
+# dlm requires dlm-lib and corosync which requires corosynclib.
+# Obsolete them all.
+Obsoletes: corosynclib < 2.4.6
+Obsoletes: corosync < 2.4.6
+Obsoletes: dlm-lib < 4.0.7-1.0.1
+Obsoletes: dlm < 4.0.7-1.0.1
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -214,6 +219,10 @@ fi
 %files
 
 %changelog
+* Thu Mar 16 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-5
+- Remove dlm, dlm-lib, corosync and corosynclib
+- We don't use XS's clustering feature which means we don't need them
+
 * Wed Feb 15 2023 Yann Dirson <yann.dirson@vates.fr> - 8.3-4
 - Requires grubby
 
