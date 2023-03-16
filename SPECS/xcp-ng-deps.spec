@@ -217,7 +217,7 @@ fi
 * Wed Feb 15 2023 Yann Dirson <yann.dirson@vates.fr> - 8.3-4
 - Requires grubby
 
-* Tue Dec 08 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-3
+* Thu Dec 08 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-3
 - Remove and obsolete linux-guest-loader and linux-guest-loader-data
 
 * Tue Oct 25 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-2
