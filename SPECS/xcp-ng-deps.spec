@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        5
+Release:        6
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -128,6 +128,7 @@ Requires: xenserver-dracut
 Requires: xenserver-hwdata
 Requires: xenserver-status-report
 Requires: xha
+Requires: xo-lite
 Requires: xsconsole
 Requires: yum
 Requires: zip
@@ -219,6 +220,9 @@ fi
 %files
 
 %changelog
+* Thu Sep 14 2023 Thierry Escande <thierry.escande@vates.tech> - 8.3-6
+- Requires xo-lite
+
 * Thu Mar 16 2023 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-5
 - Remove dlm, dlm-lib, corosync and corosynclib
 - We don't use XS's clustering feature which means we don't need them
