@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        12
+Release:        12.0.mpi3mr
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -150,6 +150,7 @@ Requires: cryptsetup
 Requires: htop
 Requires: iftop
 Requires: yum-utils
+Requires: mpi3mr-module
 
 # Obsolete package to be removed during upgrade to 7.5 or higher
 Obsoletes: vgpu < 7.3.3
@@ -210,6 +211,9 @@ fi
 %files
 
 %changelog
+* Mon Oct 09 2023 Yann Dirson <yann.dirson@vates.tech> - 8.2.0-12.0.mpi3mr
+- Add dependency to mpi3mr-module
+
 * Tue Jan 18 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-12
 - Remove dep to bugtool-conn-test, obsoleted by xenserver-status-report
 - Remove dep to xenserver-transfer-vm, obsoleted by xcp-ng-deps itself
