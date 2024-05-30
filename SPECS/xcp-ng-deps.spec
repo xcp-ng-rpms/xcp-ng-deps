@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        7
+Release:        8
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -27,7 +27,6 @@ Requires: expect
 Requires: fcoe-utils
 Requires: fontconfig
 Requires: gdisk
-Requires: gfs2-utils
 Requires: gnu-free-sans-fonts
 Requires: gnupg2
 Requires: grub
@@ -225,6 +224,9 @@ fi
 %files
 
 %changelog
+* Thu May 30 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-8
+- Don't require gfs2-utils, which isn't used in XCP-ng
+
 * Mon Sep 18 2023 Yann Dirson <yann.dirson@vates.fr> - 8.3-7
 - Add libverto-tevent as explicit require
 
