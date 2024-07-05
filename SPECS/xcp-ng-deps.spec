@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        9
+Release:        10
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -107,7 +107,6 @@ Requires: wget
 Requires: wsproxy
 Requires: xapi-xe
 Requires: xapi-nbd
-Requires: xapi-storage
 Requires: xapi-storage-script
 Requires: xapi-tests
 Requires: xcp-featured
@@ -223,6 +222,10 @@ fi
 %files
 
 %changelog
+* Fri Jul 05 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-10
+- Remove dependency to xapi-storage (provided by python2-xapi-storage currently)
+- No component in XCP-ng requires it at the moment
+
 * Fri Jul 05 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-9
 - Remove dependency to fontconfig, which was cut from xcp-ng-plymouth-theme already
 
