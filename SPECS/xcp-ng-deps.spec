@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        9
+Release:        10
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -26,7 +26,6 @@ Requires: efibootmgr
 Requires: expect
 Requires: fcoe-utils
 Requires: gdisk
-Requires: gnu-free-sans-fonts
 Requires: gnupg2
 Requires: grub
 Requires: grub-efi
@@ -223,6 +222,9 @@ fi
 %files
 
 %changelog
+* Tue Jul 09 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-10
+- Remove dependency to gnu-free-sans-fonts, not required by anything anymore
+
 * Fri Jul 05 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-9
 - Remove dependency to fontconfig, which was cut from xcp-ng-plymouth-theme already
 
