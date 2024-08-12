@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        10
+Release:        11
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -58,7 +58,6 @@ Requires: openssh-clients
 Requires: openssh-server
 Requires: openssl-perl
 Requires: openvswitch
-Requires: oprofile
 Requires: parted
 Requires: plymouth
 Requires: plymouth-graphics-libs
@@ -191,6 +190,7 @@ Obsoletes: corosynclib < 2.4.6
 Obsoletes: corosync < 2.4.6
 Obsoletes: dlm-lib < 4.0.7-1.0.1
 Obsoletes: dlm < 4.0.7-1.0.1
+Obsoletes: oprofile <= 0.9.9-25.el7_5.1
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -222,6 +222,9 @@ fi
 %files
 
 %changelog
+* Mon Aug 12 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-11
+- Obsolete unused package oprofile
+
 * Tue Jul 09 2024 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.3-10
 - Remove dependency to gnu-free-sans-fonts, not required by anything anymore
 
