@@ -34,6 +34,7 @@ Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
 Requires: host-upgrade-plugin
 Requires: interface-rename
+# Already required by xapi-core and xsconsole
 Requires: ipmitool
 Requires: iproute-tc
 Requires: ipset
@@ -43,6 +44,7 @@ Requires: iscsi-initiator-utils
 Requires: kbd
 Requires: kexec-tools
 Requires: kpatch
+# Already required by xcp-emu-manager and xen-dom0-tools
 Requires: libempserver
 Requires: linux-firmware
 Requires: lsof
@@ -59,9 +61,11 @@ Requires: openssh-server
 Requires: openssl-perl
 Requires: openvswitch
 Requires: parted
+# The following three, already required by xcp-ng-plymouth-theme
 Requires: plymouth
 Requires: plymouth-graphics-libs
 Requires: plymouth-plugin-script
+# Currently requires acpica-tools, also pulled by xenserver-status-report
 Requires: pmtools
 Requires: policycoreutils
 Requires: portmap
@@ -77,6 +81,7 @@ Requires: samba-client
 Requires: samba-winbind-clients
 Requires: screen
 Requires: sharutils
+# Already pulled by xapi-core
 Requires: sm
 Requires: sm-cli
 Requires: smartmontools
