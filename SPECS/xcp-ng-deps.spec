@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.2.0
-Release:        12
+Release:        13
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -110,6 +110,7 @@ Requires: vcputune
 Requires: vendor-drivers
 Requires: vendor-update-keys
 Requires: vhd-tool
+Requires: vim-minimal
 Requires: vhostmd
 Requires: vncsnapshot
 Requires: vncterm
@@ -210,6 +211,9 @@ fi
 %files
 
 %changelog
+* Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.2.0-13
+- Requires vim-minimal
+
 * Tue Jan 18 2022 Samuel Verschelde <stormi-xcp@ylix.fr> - 8.2.0-12
 - Remove dep to bugtool-conn-test, obsoleted by xenserver-status-report
 - Remove dep to xenserver-transfer-vm, obsoleted by xcp-ng-deps itself
