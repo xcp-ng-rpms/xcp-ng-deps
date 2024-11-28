@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        12
+Release:        13
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -105,6 +105,7 @@ Requires: vcputune
 Requires: vendor-drivers
 Requires: vendor-update-keys
 Requires: vhd-tool
+Requires: vim-minimal
 Requires: vncsnapshot
 Requires: vncterm
 Requires: wget
@@ -227,6 +228,9 @@ fi
 %files
 
 %changelog
+* Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
+- Require vim-minimal
+
 * Fri Oct 25 2024 Yann Dirson <yann.dirson@vates.tech> - 8.3-12
 - Require python2-xapi-storage not obsolete xapi-storage
 
