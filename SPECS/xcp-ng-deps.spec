@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        13
+Release:        14
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -138,9 +138,6 @@ Requires: zip
 # XAPI chokes on nvidia GPUs without that package
 Requires: gpumon
 
-# host-installer needs this to be installed
-Requires: grubby
-
 Requires(post): sed
 
 # Additional niceties
@@ -228,6 +225,9 @@ fi
 %files
 
 %changelog
+* Thu Jan 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.3-14
+- Stop pulling grubby, unused since host-installer v10.10.17
+
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
 - Require vim-minimal
 
