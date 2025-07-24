@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.6
+Release:        0.ydi.7
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -15,6 +15,7 @@ Requires: almalinux-repos
 Requires: bzip2
 Requires: cronie-noanacron
 Requires: grub2-efi-x64
+Requires: grub2-efi-x64-modules
 Requires: shim-x64
 Requires: wget
 
@@ -207,7 +208,7 @@ fi
 %files
 
 %changelog
-* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.6
+* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.7
 - Base for 9.0 based on Alma 10
 
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
