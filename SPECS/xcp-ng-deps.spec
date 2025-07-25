@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.7
+Release:        0.ydi.8
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -24,8 +24,10 @@ Requires: bash-completion
 Requires: cryptsetup
 Requires: htop
 Requires: iftop
+Requires: less
 Requires: lsof
 #Requires: pciutils
+Requires: openssh-server
 Requires: strace
 Requires: vim-minimal
 
@@ -208,7 +210,7 @@ fi
 %files
 
 %changelog
-* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.7
+* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.8
 - Base for 9.0 based on Alma 10
 
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
