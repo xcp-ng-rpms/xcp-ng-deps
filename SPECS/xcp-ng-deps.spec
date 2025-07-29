@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.9
+Release:        0.ydi.10
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -16,7 +16,10 @@ Requires: bzip2
 Requires: cronie-noanacron
 Requires: grub2-efi-x64
 Requires: grub2-efi-x64-modules
+Requires: rootfiles
 Requires: shim-x64
+Requires: smartmontools
+Requires: usbutils
 Requires: wget
 
 # Additional niceties
@@ -26,25 +29,32 @@ Requires: htop
 Requires: iftop
 Requires: less
 Requires: lsof
-#Requires: pciutils
+Requires: man-db
+Requires: openssh-clients
 Requires: openssh-server
+Requires: parted
+Requires: screen
 Requires: strace
+Requires: systemtap-runtime
+Requires: tcpdump
+Requires: unzip
 Requires: vim-minimal
+Requires: zip
 
 # deps that should live somewhere else
+Requires: cifs-utils
 Requires: iptables-services
 Requires: iptables-utils
 Requires: iptables-legacy
+Requires: iscsi-initiator-utils
 # surely not only host-installer using it?
 Requires: chrony
 Requires: efibootmgr
-# openssl from gencert fails wihtout this
-Requires: crypto-policies
 
 # # harware support
 # Requires: aic94xx-firmware
 
-# XAPI stack
+# XAPI stack (some should instead be Req'd by other packages?)
 Requires: blktap
 Requires: guest-templates-json-data-linux
 Requires: guest-templates-json-data-windows
@@ -52,135 +62,74 @@ Requires: guest-templates-json-data-other
 Requires: mdadm
 Requires: nfs-utils
 Requires: rrdd-plugins
+Requires: sm-cli
 Requires: varstored
 Requires: varstored-tools
 Requires: xapi-core
+Requires: xapi-nbd
+Requires: xapi-tests
 Requires: xcp-ng-pv-tools
 Requires: xcp-ng-xapi-plugins
 Requires: xcp-rrdd
+Requires: xenopsd-cli
 Requires: xo-lite
 Requires: xsconsole
 
+# # not yet built
+# # XAPI chokes on nvidia GPUs without that package
+# Requires: gpumon
+# Requires: host-upgrade-plugin
+# Requires: vcputune
+# Requires: xcp-ng-plymouth-theme
+# Requires: xen-crashdump-analyser
+# Requires: xenserver-status-report
+# Requires: xha
+
 # # dropped from the list, possibly temporarily
-# Requires: chrony
-# Requires: cifs-utils
-# Requires: compat-db47
-# Requires: compat-libstdc++-33
 # Requires: control-slice
 # Requires: dracut-network
-# Requires: e2fsprogs
-# Requires: efibootmgr
 # Requires: expect
 # Requires: fcoe-utils
 # Requires: gdisk
-# Requires: gnupg2
-# Requires: grub
-# Requires: grub-efi
-# Requires: guest-templates-json-data-linux
-# Requires: guest-templates-json-data-other
-# Requires: guest-templates-json-data-windows
-# Requires: host-upgrade-plugin
-# Requires: interface-rename
-# # Already required by xapi-core and xsconsole
-# Requires: ipmitool
 # Requires: iproute-tc
 # Requires: ipset
-# Requires: iptables
 # Requires: irqbalance
-# Requires: iscsi-initiator-utils
-# Requires: kbd
 # Requires: kexec-tools
-# Requires: kpatch
-# # Already required by xcp-emu-manager and xen-dom0-tools
-# Requires: libempserver
-# Requires: linux-firmware
 # Requires: makedumpfile
 # Requires: mcelog
 # Requires: memtest86+
-# Requires: module-init-tools
 # Requires: nano
 # Requires: net-snmp
-# Requires: nfs-utils
-# Requires: openssh-clients
-# Requires: openssh-server
-# Requires: openssl-perl
-# Requires: openvswitch
-# Requires: parted
-# # The following three, already required by xcp-ng-plymouth-theme
-# Requires: plymouth
-# Requires: plymouth-graphics-libs
-# Requires: plymouth-plugin-script
 # # Currently requires acpica-tools, also pulled by xenserver-status-report
 # Requires: pmtools
 # Requires: policycoreutils
 # Requires: portmap
 # Requires: pyserial
-# Requires: python-fasteners
-# Requires: python2-xapi-storage
 # Requires: redhat-lsb-core
 # Requires: redhat-lsb-submod-security
-# Requires: rootfiles
-# Requires: rrdd-plugins
-# Requires: rsync
 # Requires: rsyslog
 # Requires: samba-client
 # Requires: samba-winbind-clients
-# Requires: screen
 # Requires: sharutils
-# # Already pulled by xapi-core
-# Requires: sm
-# Requires: sm-cli
-# Requires: smartmontools
-# Requires: squeezed
-# Requires: stunnel
 # Requires: sudo
 # Requires: sysfsutils
-# Requires: sysstat
 # Requires: system-config-firewall-tui
-# Requires: systemtap-runtime
-# Requires: tcpdump
 # Requires: telnet
-# Requires: unzip
-# Requires: usbutils
-# Requires: varstored
-# Requires: varstored-tools
 # Requires: vconfig
-# Requires: vcputune
 # Requires: vendor-drivers
 # Requires: vendor-update-keys
-# Requires: vhd-tool
 # Requires: vncsnapshot
 # Requires: vncterm
 # Requires: wsproxy
-# Requires: xapi-xe
-# Requires: xapi-nbd
 # Requires: xapi-storage-script
-# Requires: xapi-tests
-# Requires: xcp-featured
-# Requires: xcp-networkd
-# Requires: xcp-ng-plymouth-theme
-# Requires: xcp-ng-pv-tools
-# Requires: xcp-rrdd
 # Requires: xdelta
-# Requires: xen-crashdump-analyser
-# Requires: xenopsd-cli
-# Requires: xenopsd-xc
 # Requires: xenserver-dracut
 # Requires: xenserver-hwdata
-# Requires: xenserver-status-report
-# Requires: xha
-# Requires: zip
-
-# # XAPI chokes on nvidia GPUs without that package
-# Requires: gpumon
 
 # # Default provider of libverto-module-base in CentOS 7, to ensure
 # # reproducibility of the nfs-utils -> gssproxy -> libverto-module-base
 # # chain, which is too weak
 # Requires: libverto-tevent
-
-# # why?
-# Requires(post): sed
 
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
@@ -212,7 +161,7 @@ fi
 %files
 
 %changelog
-* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.9
+* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.10
 - Base for 9.0 based on Alma 10
 
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
