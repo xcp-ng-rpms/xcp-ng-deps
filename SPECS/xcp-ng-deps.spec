@@ -15,14 +15,20 @@ Requires: xcp-ng-release-config
 Requires: bzip2
 Requires: cronie-noanacron
 # Requires: gdisk
+%ifarch x86_64
 Requires: grub2-efi-x64
 Requires: grub2-efi-x64-modules
+Requires: shim-x64
+%endif
+%ifarch aarch64
+Requires: grub2-efi-aa64
+Requires: grub2-efi-aa64-modules
+%endif
 Requires: kernel
 Requires: nvme-cli
 Requires: openssh-server
 Requires: rootfiles
 # Requires: rsyslog
-Requires: shim-x64
 Requires: smartmontools
 Requires: usbutils
 Requires: wget
