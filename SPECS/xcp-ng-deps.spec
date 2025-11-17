@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.11
+Release:        0.ydi.12
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -27,6 +27,7 @@ Requires: rootfiles
 Requires: smartmontools
 Requires: usbutils
 Requires: wget
+Requires: kernel
 
 # Additional niceties
 Requires: bash-completion
@@ -86,6 +87,7 @@ Requires: xsconsole
 # Requires: gpumon
 # Requires: host-upgrade-plugin
 # Requires: vcputune
+# Requires: vncterm
 # Requires: xcp-ng-plymouth-theme
 # Requires: xen-crashdump-analyser
 # Requires: xenserver-status-report
@@ -113,7 +115,6 @@ Requires: xsconsole
 # Requires: pyserial
 # Requires: redhat-lsb-core
 # Requires: redhat-lsb-submod-security
-# Requires: rsyslog
 # Requires: samba-client
 # Requires: samba-winbind-clients
 # Requires: sharutils
@@ -125,7 +126,6 @@ Requires: xsconsole
 # Requires: vendor-drivers
 # Requires: vendor-update-keys
 # Requires: vncsnapshot
-# Requires: vncterm
 # Requires: wsproxy
 # Requires: xapi-storage-script
 # Requires: xdelta
@@ -167,7 +167,7 @@ fi
 %files
 
 %changelog
-* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.11
+* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.12
 - Base for 9.0 based on Alma 10
 
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
