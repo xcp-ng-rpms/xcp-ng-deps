@@ -15,14 +15,14 @@ Requires: xcp-ng-release-config
 Requires: bzip2
 Requires: cronie-noanacron
 # Requires: gdisk
-%ifarch x86_64
-Requires: grub2-efi-x64
-Requires: grub2-efi-x64-modules
-Requires: shim-x64
-%endif
 %ifarch aarch64
 Requires: grub2-efi-aa64
 Requires: grub2-efi-aa64-modules
+%else
+# FIXME this should indeed be "%%ifarch x86_64" except it does not work
+Requires: grub2-efi-x64
+Requires: grub2-efi-x64-modules
+Requires: shim-x64
 %endif
 Requires: kernel
 Requires: nvme-cli
