@@ -32,6 +32,7 @@ Requires: rootfiles
 Requires: smartmontools
 Requires: usbutils
 Requires: wget
+Requires: xcp-ng-config
 
 # Additional niceties
 Requires: bash-completion
