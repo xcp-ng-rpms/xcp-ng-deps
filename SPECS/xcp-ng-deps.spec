@@ -80,10 +80,15 @@ Requires: xapi-nbd
 Requires: xapi-tests
 Requires: xcp-ng-pv-tools
 Requires: xcp-ng-xapi-plugins
+Requires: xcp-clipboardd
+Requires: xcp-featured
 Requires: xcp-rrdd
 Requires: xenopsd-cli
 Requires: xo-lite
 Requires: xsconsole
+
+# FIXME: should be pulled by xenopds
+Requires: xengt-userspace
 
 # # not yet built
 # # XAPI chokes on nvidia GPUs without that package
