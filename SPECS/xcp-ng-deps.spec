@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.15
+Release:        0.ydi.16
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -90,12 +90,14 @@ Requires: xsconsole
 # FIXME: should be pulled by xenopds
 Requires: xengt-userspace
 
+# FIXME: should be pulled by some xapi package
+Requires: vncterm
+
 # # not yet built
 # # XAPI chokes on nvidia GPUs without that package
 # Requires: gpumon
 # Requires: host-upgrade-plugin
 # Requires: vcputune
-# Requires: vncterm
 # Requires: xcp-ng-plymouth-theme
 # Requires: xen-crashdump-analyser
 # Requires: xenserver-status-report
@@ -175,7 +177,7 @@ fi
 %files
 
 %changelog
-* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.15
+* Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.16
 - Base for 9.0 based on Alma 10
 
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
