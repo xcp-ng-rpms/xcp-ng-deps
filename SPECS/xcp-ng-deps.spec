@@ -18,6 +18,7 @@ Requires: cronie-noanacron
 Requires: grub2-efi-x64
 Requires: grub2-efi-x64-modules
 Requires: kernel
+Requires: nvme-cli
 Requires: openssh-server
 Requires: rootfiles
 # Requires: rsyslog
@@ -165,6 +166,7 @@ fi
 - Drop Obsoletes clauses
 - Drop duplicate Requires that are or were pulled from other packages
 - Stop pulling obsolete packages
+- Include nvme-cli
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
