@@ -30,8 +30,6 @@ Requires: smartmontools
 Requires: usbutils
 Requires: wget
 Requires: kernel
-Requires: kernel-modules
-Requires: kernel-modules-extra
 
 # Additional niceties
 Requires: bash-completion
@@ -181,6 +179,7 @@ fi
 %changelog
 * Thu Jan 22 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.18 - WIP
 - Include nvme-cli
+- Switch kernel dependencies back to XS-like kernel packaging
 
 * Mon Jan 19 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.17
 - Include iwlwifi-mvm-firmware
