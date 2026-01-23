@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        13
+Release:        14
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -198,6 +198,10 @@ Obsoletes: dlm-lib < 4.0.7-1.0.1
 Obsoletes: dlm < 4.0.7-1.0.1
 Obsoletes: oprofile <= 0.9.9-25.el7_5.1
 
+
+# Obsolete packages to be removed during openssl-3 upgrade
+Obsoletes: gnutls-dane <= 3.3.29-9.el7_6
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -228,6 +232,9 @@ fi
 %files
 
 %changelog
+* Fri Jan 23 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
+- Obsolete gnutls-dane (part of openssl-3 upgrade)
+
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
 - Require vim-minimal
 
