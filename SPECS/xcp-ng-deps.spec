@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.17
+Release:        0.ydi.18
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -24,6 +24,7 @@ Requires: grub2-efi-x64
 Requires: grub2-efi-x64-modules
 Requires: shim-x64
 %endif
+Requires: nvme-cli
 Requires: rootfiles
 Requires: smartmontools
 Requires: usbutils
@@ -178,6 +179,9 @@ fi
 %files
 
 %changelog
+* Thu Jan 22 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.18 - WIP
+- Include nvme-cli
+
 * Mon Jan 19 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.17
 - Include iwlwifi-mvm-firmware
 
