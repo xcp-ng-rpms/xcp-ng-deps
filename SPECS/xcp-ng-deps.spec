@@ -88,9 +88,6 @@ Requires: xenopsd-cli
 Requires: xo-lite
 Requires: xsconsole
 
-# FIXME: should be pulled by xenopds
-Requires: xengt-userspace
-
 # FIXME: should be pulled by some xapi package
 Requires: vncterm
 
@@ -182,6 +179,7 @@ fi
 - Include nvme-cli
 - Include linux-firmware
 - Switch kernel dependencies back to XS-like kernel packaging
+- Stop pulling xengt-userspace
 
 * Mon Jan 19 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.17
 - Include iwlwifi-mvm-firmware
