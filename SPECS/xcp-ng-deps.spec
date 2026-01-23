@@ -61,6 +61,7 @@ Requires: chrony
 Requires: efibootmgr
 
 # # harware support
+Requires: linux-firmware
 # Requires: aic94xx-firmware
 Requires: iwlwifi-mvm-firmware
 
@@ -177,8 +178,9 @@ fi
 %files
 
 %changelog
-* Thu Jan 22 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.18 - WIP
+* Thu Jan 22 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.18
 - Include nvme-cli
+- Include linux-firmware
 - Switch kernel dependencies back to XS-like kernel packaging
 
 * Mon Jan 19 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.17
