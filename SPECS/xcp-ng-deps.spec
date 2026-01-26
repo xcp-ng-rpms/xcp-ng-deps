@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.18
+Release:        0.ydi.19
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -63,7 +63,6 @@ Requires: efibootmgr
 # # harware support
 Requires: linux-firmware
 # Requires: aic94xx-firmware
-Requires: iwlwifi-mvm-firmware
 
 # XAPI stack (some should instead be Req'd by other packages?)
 Requires: blktap
@@ -175,14 +174,11 @@ fi
 %files
 
 %changelog
-* Thu Jan 22 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.18
+* Mon Jan 26 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.19
 - Include nvme-cli
 - Include linux-firmware
 - Switch kernel dependencies back to XS-like kernel packaging
 - Stop pulling xengt-userspace
-
-* Mon Jan 19 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.17
-- Include iwlwifi-mvm-firmware
 
 * Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.16
 - Base for 9.0 based on Alma 10
