@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.19
+Release:        0.ydi.20
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -39,6 +39,7 @@ Requires: iftop
 Requires: less
 Requires: lsof
 Requires: man-db
+Requires: netcat
 Requires: openssh-clients
 Requires: openssh-server
 Requires: parted
@@ -174,9 +175,10 @@ fi
 %files
 
 %changelog
-* Mon Jan 26 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.19
+* Mon Jan 26 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.20
 - Include nvme-cli
 - Include linux-firmware
+- Include netcat
 - Switch kernel dependencies back to XS-like kernel packaging
 - Stop pulling xengt-userspace
 
