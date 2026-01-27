@@ -43,6 +43,7 @@ Requires: lsof
 Requires: man-db
 # Requires: nano
 # Requires: memtest86+
+Requires: netcat
 # Requires: net-snmp
 Requires: openssh-clients
 Requires: parted
@@ -174,6 +175,7 @@ fi
 - Drop duplicate Requires that are or were pulled from other packages
 - Stop pulling obsolete packages
 - Include nvme-cli
+- Include netcat
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
