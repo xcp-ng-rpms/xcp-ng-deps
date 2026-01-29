@@ -38,7 +38,7 @@ Requires: bzip2
 Requires: tar
 Requires: python-six
 # missing dnf-bridge too for usbutils
-Requires: libusb-1.0.so.0
+Requires: libusb1
 
 # Additional niceties
 Requires: bash-completion
