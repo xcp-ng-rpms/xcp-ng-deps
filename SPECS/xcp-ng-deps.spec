@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        0.ydi.20
+Release:        0.ydi.21
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -30,6 +30,15 @@ Requires: smartmontools
 Requires: usbutils
 Requires: wget
 Requires: kernel
+
+# stuff necessary for create-installimg, which cannot yet be specified
+# in host-installer.spec until we have the dnf-bridge
+# (and most are part of the container image?)
+Requires: bzip2
+Requires: tar
+Requires: python-six
+# missing dnf-bridge too for usbutils
+Requires: libusb-1.0.so.0
 
 # Additional niceties
 Requires: bash-completion
@@ -175,12 +184,14 @@ fi
 %files
 
 %changelog
-* Mon Jan 26 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.20
+* Mon Jan 26 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.21
 - Include nvme-cli
 - Include linux-firmware
 - Include netcat
 - Switch kernel dependencies back to XS-like kernel packaging
 - Stop pulling xengt-userspace
+- HACK: include a number of packages that should be pulled by other packages,
+  pending dnf-bridge implementation
 
 * Wed Jul 16 2025 Yann Dirson <yann.dirson@vates.tech> - 8.99-0.ydi.16
 - Base for 9.0 based on Alma 10
