@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        13
+Release:        14
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -96,6 +96,7 @@ Requires: system-config-firewall-tui
 Requires: systemtap-runtime
 Requires: tcpdump
 Requires: telnet
+Requires: traceroute
 Requires: unzip
 Requires: usbutils
 Requires: varstored
@@ -228,6 +229,9 @@ fi
 %files
 
 %changelog
+* Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
+- Require traceroute
+
 * Thu Nov 28 2024 Benjamin Reis <benjamin.reis@vates.tech> - 8.3-13
 - Require vim-minimal
 
