@@ -199,6 +199,14 @@ Obsoletes: dlm-lib < 4.0.7-1.0.1
 Obsoletes: dlm < 4.0.7-1.0.1
 Obsoletes: oprofile <= 0.9.9-25.el7_5.1
 
+# Obsolete packages not used (installed by mistake)
+Obsoletes: gmp-devel <= 1:6.0.0-15.el7
+Obsoletes: libtasn1-devel <= 4.10-1.el7
+Obsoletes: nettle-devel <= 2.7.1-9.el7_9
+Obsoletes: p11-kit-devel <= 0.23.5-3.el7
+Obsoletes: zlib-devel <= 1.2.7-17.el7
+Obsoletes: gnutls-devel <= 0:3.3.29-10.1.xcpng8.3
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -229,6 +237,9 @@ fi
 %files
 
 %changelog
+* Tue Mar 10 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-15
+- Obsolete unused devel packages (gnutls-devel replace gnutls-dane)
+
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
 
