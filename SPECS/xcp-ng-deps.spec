@@ -105,6 +105,9 @@ Requires: xenopsd-cli
 Requires: xo-lite
 Requires: xsconsole
 
+# Required in the installed host by host-installer
+Requires: dnf-plugins-core
+
 # not yet built
 # Requires: vcputune
 
@@ -176,6 +179,7 @@ fi
 - Stop pulling obsolete packages
 - Include nvme-cli
 - Include netcat
+- Include dnf-plugins-core
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
