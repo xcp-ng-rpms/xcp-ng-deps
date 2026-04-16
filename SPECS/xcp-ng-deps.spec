@@ -32,6 +32,7 @@ Requires: rootfiles
 Requires: smartmontools
 Requires: usbutils
 Requires: wget
+Requires: xen-hypervisor-elf
 Requires: xcp-ng-config
 
 # Additional niceties
@@ -180,6 +181,7 @@ fi
 - Include nvme-cli
 - Include netcat
 - Include dnf-plugins-core
+- Pull xen-hypervisor-elf, as xen-hypervisor since 4.20 only contains EFI binaries
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
