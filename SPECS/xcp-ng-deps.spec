@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
-Version:        8.3
-Release:        14
+Version:        8.99
+Release:        1
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -229,6 +229,9 @@ fi
 %files
 
 %changelog
+* Fri Apr 17 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
+- Base for 9.0 based on Alma 10
+
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
 
