@@ -8,46 +8,99 @@ URL:            https://xcp-ng.org
 
 BuildArch:      noarch
 
-# Unversioned requires, sorted alphabetically
-# Extracted from groups.xml
-Requires: aic94xx-firmware
-Requires: bash-completion
-Requires: blktap
+# core distro in addition to Alma's @core
+Requires: xcp-ng-release
+Requires: xcp-ng-release-config
 Requires: bzip2
-Requires: chrony
-Requires: cifs-utils
-Requires: control-slice
 Requires: cronie-noanacron
-Requires: dracut-network
-Requires: e2fsprogs
-Requires: efibootmgr
-Requires: fcoe-utils
 Requires: gdisk
-Requires: gnupg2
 Requires: grub
 Requires: grub-efi
+Requires: openssh-server
+Requires: rootfiles
+Requires: rsyslog
+Requires: smartmontools
+Requires: usbutils
+Requires: wget
+
+# Additional niceties
+Requires: bash-completion
+Requires: cryptsetup
+Requires: htop
+Requires: iftop
+Requires: lsof
+Requires: nano
+Requires: openssh-clients
+Requires: memtest86+
+Requires: net-snmp
+Requires: parted
+Requires: rsync
+Requires: screen
+Requires: strace
+Requires: systemtap-runtime
+Requires: tcpdump
+Requires: traceroute
+Requires: unzip
+Requires: vim-minimal
+Requires: zip
+
+# deps that should live somewhere else
+Requires: cifs-utils
+Requires: iptables
+Requires: iscsi-initiator-utils
+Requires: chrony
+Requires: efibootmgr
+
+# hardware support
+Requires: aic94xx-firmware
+Requires: linux-firmware
+Requires: vendor-drivers
+
+# XAPI stack (many should instead be Req'd by other packages)
+Requires: blktap
+Requires: control-slice
+# XAPI chokes on nvidia GPUs without that package
+Requires: gpumon
 Requires: guest-templates-json-data-linux
 Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
 Requires: host-upgrade-plugin
+Requires: rrdd-plugins
+Requires: sm-cli
+Requires: varstored
+Requires: varstored-tools
+Requires: vncterm
+Requires: vncsnapshot
+Requires: wsproxy
+Requires: xapi-nbd
+Requires: xapi-storage-script
+Requires: xapi-tests
+Requires: xcp-featured
+Requires: xcp-ng-plymouth-theme
+Requires: xcp-ng-pv-tools
+Requires: xcp-ng-xapi-plugins
+Requires: xcp-rrdd
+Requires: xen-crashdump-analyser
+Requires: xenopsd-cli
+Requires: xenserver-status-report
+Requires: xha
+Requires: xo-lite
+Requires: xsconsole
+
+# Unversioned requires, sorted alphabetically
+# Extracted from groups.xml
+Requires: dracut-network
+Requires: e2fsprogs
+Requires: fcoe-utils
+Requires: gnupg2
 Requires: iproute-tc
 Requires: ipset
-Requires: iptables
 Requires: irqbalance
-Requires: iscsi-initiator-utils
 Requires: kexec-tools
 Requires: kpatch
-Requires: linux-firmware
-Requires: lsof
 Requires: makedumpfile
 Requires: mdadm
-Requires: memtest86+
-Requires: nano
-Requires: net-snmp
 Requires: nfs-utils
-Requires: openssh-clients
-Requires: openssh-server
-Requires: parted
 # The following three, already required by xcp-ng-plymouth-theme
 Requires: plymouth
 Requires: plymouth-graphics-libs
@@ -57,65 +110,19 @@ Requires: pmtools
 Requires: policycoreutils
 Requires: redhat-lsb-core
 Requires: redhat-lsb-submod-security
-Requires: rootfiles
-Requires: rrdd-plugins
-Requires: rsync
-Requires: rsyslog
 Requires: samba-client
 Requires: samba-winbind-clients
-Requires: screen
-Requires: sm-cli
-Requires: smartmontools
-Requires: strace
 Requires: sudo
 Requires: sysfsutils
 Requires: sysstat
 Requires: system-config-firewall-tui
-Requires: systemtap-runtime
-Requires: tcpdump
-Requires: traceroute
-Requires: unzip
-Requires: usbutils
-Requires: varstored
-Requires: varstored-tools
 Requires: vcputune
-Requires: vendor-drivers
 Requires: vendor-update-keys
-Requires: vim-minimal
-Requires: vncsnapshot
-Requires: vncterm
-Requires: wget
-Requires: wsproxy
-Requires: xapi-nbd
-Requires: xapi-storage-script
-Requires: xapi-tests
-Requires: xcp-featured
-Requires: xcp-ng-plymouth-theme
-Requires: xcp-ng-pv-tools
-Requires: xcp-ng-release
-Requires: xcp-ng-release-config
-Requires: xcp-ng-xapi-plugins
-Requires: xcp-rrdd
 Requires: xdelta
-Requires: xen-crashdump-analyser
-Requires: xenopsd-cli
 Requires: xenserver-dracut
-Requires: xenserver-status-report
-Requires: xha
-Requires: xo-lite
-Requires: xsconsole
-Requires: zip
-
-# XAPI chokes on nvidia GPUs without that package
-Requires: gpumon
 
 # host-installer needs this to be installed
 Requires: grubby
-
-# Additional niceties
-Requires: cryptsetup
-Requires: htop
-Requires: iftop
 
 # Default provider of libverto-module-base in CentOS 7, to ensure
 # reproducibility of the nfs-utils -> gssproxy -> libverto-module-base
