@@ -16,14 +16,11 @@ Requires: blktap
 Requires: bzip2
 Requires: chrony
 Requires: cifs-utils
-Requires: compat-db47
-Requires: compat-libstdc++-33
 Requires: control-slice
 Requires: cronie-noanacron
 Requires: dracut-network
 Requires: e2fsprogs
 Requires: efibootmgr
-Requires: expect
 Requires: fcoe-utils
 Requires: gdisk
 Requires: gnupg2
@@ -34,32 +31,24 @@ Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
 Requires: host-upgrade-plugin
 Requires: interface-rename
-# Already required by xapi-core and xsconsole
-Requires: ipmitool
 Requires: iproute-tc
 Requires: ipset
 Requires: iptables
 Requires: irqbalance
 Requires: iscsi-initiator-utils
-Requires: kbd
 Requires: kexec-tools
 Requires: kpatch
-# Already required by xcp-emu-manager and xen-dom0-tools
-Requires: libempserver
 Requires: linux-firmware
 Requires: lsof
 Requires: makedumpfile
 Requires: mcelog
 Requires: mdadm
 Requires: memtest86+
-Requires: module-init-tools
 Requires: nano
 Requires: net-snmp
 Requires: nfs-utils
 Requires: openssh-clients
 Requires: openssh-server
-Requires: openssl-perl
-Requires: openvswitch
 Requires: parted
 # The following three, already required by xcp-ng-plymouth-theme
 Requires: plymouth
@@ -68,10 +57,6 @@ Requires: plymouth-plugin-script
 # Currently requires acpica-tools, also pulled by xenserver-status-report
 Requires: pmtools
 Requires: policycoreutils
-Requires: portmap
-Requires: pyserial
-Requires: python-fasteners
-Requires: python2-xapi-storage
 Requires: redhat-lsb-core
 Requires: redhat-lsb-submod-security
 Requires: rootfiles
@@ -82,13 +67,9 @@ Requires: samba-client
 Requires: samba-winbind-clients
 Requires: screen
 Requires: sharutils
-# Already pulled by xapi-core
-Requires: sm
 Requires: sm-cli
 Requires: smartmontools
-Requires: squeezed
 Requires: strace
-Requires: stunnel
 Requires: sudo
 Requires: sysfsutils
 Requires: sysstat
@@ -105,18 +86,15 @@ Requires: vconfig
 Requires: vcputune
 Requires: vendor-drivers
 Requires: vendor-update-keys
-Requires: vhd-tool
 Requires: vim-minimal
 Requires: vncsnapshot
 Requires: vncterm
 Requires: wget
 Requires: wsproxy
-Requires: xapi-xe
 Requires: xapi-nbd
 Requires: xapi-storage-script
 Requires: xapi-tests
 Requires: xcp-featured
-Requires: xcp-networkd
 Requires: xcp-ng-plymouth-theme
 Requires: xcp-ng-pv-tools
 Requires: xcp-ng-release
@@ -126,7 +104,6 @@ Requires: xcp-rrdd
 Requires: xdelta
 Requires: xen-crashdump-analyser
 Requires: xenopsd-cli
-Requires: xenopsd-xc
 Requires: xenserver-dracut
 Requires: xenserver-hwdata
 Requires: xenserver-status-report
@@ -188,6 +165,7 @@ fi
 * Fri Apr 17 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
 - Base for 9.0 based on Alma 10
 - Drop Obsoletes clauses
+- Drop duplicate Requires that are or were pulled from other packages
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
