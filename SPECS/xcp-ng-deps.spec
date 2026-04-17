@@ -11,14 +11,16 @@ BuildArch:      noarch
 # core distro in addition to Alma's @core
 Requires: xcp-ng-release
 Requires: xcp-ng-release-config
+# Requires: almalinux-repos
 Requires: bzip2
 Requires: cronie-noanacron
 # Requires: gdisk
-Requires: grub
-Requires: grub-efi
+Requires: grub2-efi-x64
+Requires: grub2-efi-x64-modules
 Requires: openssh-server
 Requires: rootfiles
 # Requires: rsyslog
+Requires: shim-x64
 Requires: smartmontools
 Requires: usbutils
 Requires: wget
@@ -46,7 +48,9 @@ Requires: zip
 
 # deps that should live somewhere else
 Requires: cifs-utils
-Requires: iptables
+Requires: iptables-legacy
+Requires: iptables-services
+Requires: iptables-utils
 Requires: iscsi-initiator-utils
 Requires: chrony
 Requires: efibootmgr
