@@ -17,6 +17,7 @@ Requires: cronie-noanacron
 # Requires: gdisk
 Requires: grub2-efi-x64
 Requires: grub2-efi-x64-modules
+Requires: kernel
 Requires: openssh-server
 Requires: rootfiles
 # Requires: rsyslog
@@ -33,9 +34,9 @@ Requires: iftop
 Requires: lsof
 Requires: man-db
 # Requires: nano
-Requires: openssh-clients
 # Requires: memtest86+
 # Requires: net-snmp
+Requires: openssh-clients
 Requires: parted
 # Requires: rsync
 Requires: screen
@@ -53,6 +54,7 @@ Requires: iptables-legacy
 Requires: iptables-services
 Requires: iptables-utils
 Requires: iscsi-initiator-utils
+# surely not only host-installer using it?
 Requires: chrony
 Requires: efibootmgr
 
@@ -67,9 +69,11 @@ Requires: blktap
 # XAPI chokes on nvidia GPUs without that package
 # Requires: gpumon
 Requires: guest-templates-json-data-linux
-Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
+Requires: guest-templates-json-data-other
 # Requires: host-upgrade-plugin
+Requires: mdadm
+Requires: nfs-utils
 Requires: rrdd-plugins
 Requires: sm-cli
 Requires: varstored
@@ -92,24 +96,19 @@ Requires: xenopsd-cli
 Requires: xo-lite
 Requires: xsconsole
 
-# Unversioned requires, sorted alphabetically
-# Extracted from groups.xml
+# not yet built
+# Requires: vcputune
+
+# dropped from the list, possibly temporarily
 # Requires: dracut-network
-Requires: e2fsprogs
 # Requires: fcoe-utils
-Requires: gnupg2
+# Requires: gnupg2
 # Requires: iproute-tc
 # Requires: ipset
 # Requires: irqbalance
 # Requires: kexec-tools
 # Requires: kpatch
 # Requires: makedumpfile
-Requires: mdadm
-Requires: nfs-utils
-# The following three, already required by xcp-ng-plymouth-theme
-# Requires: plymouth
-# Requires: plymouth-graphics-libs
-# Requires: plymouth-plugin-script
 # Currently requires acpica-tools, also pulled by xenserver-status-report
 # Requires: pmtools
 # Requires: policycoreutils
@@ -117,17 +116,14 @@ Requires: nfs-utils
 # Requires: redhat-lsb-submod-security
 # Requires: samba-client
 # Requires: samba-winbind-clients
+# Requires: sharutils
 # Requires: sudo
 # Requires: sysfsutils
 # Requires: sysstat
 # Requires: system-config-firewall-tui
-# Requires: vcputune
 # Requires: vendor-update-keys
 # Requires: xdelta
 # Requires: xenserver-dracut
-
-# host-installer needs this to be installed
-# Requires: grubby
 
 # Default provider of libverto-module-base in CentOS 7, to ensure
 # reproducibility of the nfs-utils -> gssproxy -> libverto-module-base
