@@ -155,50 +155,6 @@ Requires: yum-utils
 # chain, which is too weak
 Requires: libverto-tevent
 
-# Obsolete package to be removed during upgrade to 7.5 or higher
-Obsoletes: vgpu < 7.3.3
-
-# Obsolete packages to be removed during upgrade to 7.6 or higher
-Obsoletes: livepatch-utils <= 1.1.0-1
-Obsoletes: sm-transport-lib < 0.11.0
-Obsoletes: xapi-clusterd < 0.26.0
-Obsoletes: xapi-storage-plugins < 1.23.0
-
-# Obsolete packages to be removed during upgrade to 8.0 or higher
-Obsoletes: xen-device-model <= 0.10.3
-Obsoletes: xengt-modules <= 4.0.0
-Obsoletes: xenopsd-xenlight <= 0.66.0
-Obsoletes: xcp-ng-center < 8.0
-Obsoletes: systemd-networkd < 219-20
-
-# Obsolete packages to be removed during upgrade to 8.1 or higher
-Obsoletes: conversion-plugin
-Obsoletes: ntp <= 4.2.6p5-999.el7.centos
-Obsoletes: ntpdate <= 4.2.6p5-999.el7.centos
-
-# Obsolete packages to be removed during upgrade to 8.2 or higher
-Obsoletes: xenserver-firstboot
-Obsoletes: xcp-ng-secureboot-certs <= 1.0.0-2
-Obsoletes: security-tools
-
-# Obsolete packages to be removed during update/upgrade to 8.2.1 or higher
-Obsoletes: xenserver-transfer-vm
-
-# Obsolete packages to be removed during update/upgrade to 8.3.0 or higher
-Obsoletes: pbis-open-upgrade
-Obsoletes: pbis-open
-Obsoletes: sm-rawhba < 2.46
-Obsoletes: vhostmd < 0.5
-Obsoletes: linux-guest-loader < 2.3.1-2
-Obsoletes: linux-guest-loader-data < 2.3.1-2
-# dlm requires dlm-lib and corosync which requires corosynclib.
-# Obsolete them all.
-Obsoletes: corosynclib < 2.4.6
-Obsoletes: corosync < 2.4.6
-Obsoletes: dlm-lib < 4.0.7-1.0.1
-Obsoletes: dlm < 4.0.7-1.0.1
-Obsoletes: oprofile <= 0.9.9-25.el7_5.1
-
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -231,6 +187,7 @@ fi
 %changelog
 * Fri Apr 17 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
 - Base for 9.0 based on Alma 10
+- Drop Obsoletes clauses
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
