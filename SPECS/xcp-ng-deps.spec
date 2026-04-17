@@ -30,7 +30,6 @@ Requires: guest-templates-json-data-linux
 Requires: guest-templates-json-data-other
 Requires: guest-templates-json-data-windows
 Requires: host-upgrade-plugin
-Requires: interface-rename
 Requires: iproute-tc
 Requires: ipset
 Requires: iptables
@@ -41,7 +40,6 @@ Requires: kpatch
 Requires: linux-firmware
 Requires: lsof
 Requires: makedumpfile
-Requires: mcelog
 Requires: mdadm
 Requires: memtest86+
 Requires: nano
@@ -66,7 +64,6 @@ Requires: rsyslog
 Requires: samba-client
 Requires: samba-winbind-clients
 Requires: screen
-Requires: sharutils
 Requires: sm-cli
 Requires: smartmontools
 Requires: strace
@@ -76,13 +73,11 @@ Requires: sysstat
 Requires: system-config-firewall-tui
 Requires: systemtap-runtime
 Requires: tcpdump
-Requires: telnet
 Requires: traceroute
 Requires: unzip
 Requires: usbutils
 Requires: varstored
 Requires: varstored-tools
-Requires: vconfig
 Requires: vcputune
 Requires: vendor-drivers
 Requires: vendor-update-keys
@@ -105,12 +100,10 @@ Requires: xdelta
 Requires: xen-crashdump-analyser
 Requires: xenopsd-cli
 Requires: xenserver-dracut
-Requires: xenserver-hwdata
 Requires: xenserver-status-report
 Requires: xha
 Requires: xo-lite
 Requires: xsconsole
-Requires: yum
 Requires: zip
 
 # XAPI chokes on nvidia GPUs without that package
@@ -119,13 +112,10 @@ Requires: gpumon
 # host-installer needs this to be installed
 Requires: grubby
 
-Requires(post): sed
-
 # Additional niceties
 Requires: cryptsetup
 Requires: htop
 Requires: iftop
-Requires: yum-utils
 
 # Default provider of libverto-module-base in CentOS 7, to ensure
 # reproducibility of the nfs-utils -> gssproxy -> libverto-module-base
@@ -166,6 +156,7 @@ fi
 - Base for 9.0 based on Alma 10
 - Drop Obsoletes clauses
 - Drop duplicate Requires that are or were pulled from other packages
+- Stop pulling obsolete packages
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
