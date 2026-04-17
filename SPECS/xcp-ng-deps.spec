@@ -31,6 +31,7 @@ Requires: cryptsetup
 Requires: htop
 Requires: iftop
 Requires: lsof
+Requires: man-db
 # Requires: nano
 Requires: openssh-clients
 # Requires: memtest86+
