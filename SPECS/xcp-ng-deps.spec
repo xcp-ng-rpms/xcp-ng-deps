@@ -56,6 +56,7 @@ Requires: tcpdump
 Requires: traceroute
 Requires: unzip
 Requires: vim-minimal
+Requires: which
 Requires: zip
 
 # deps that should live somewhere else
