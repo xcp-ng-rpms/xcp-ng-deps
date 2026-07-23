@@ -24,7 +24,7 @@ Requires: grub2-efi-x64
 Requires: grub2-efi-x64-modules
 Requires: shim-x64
 %endif
-Requires: kernel
+Requires: kernel-xcpng
 Requires: nvme-cli
 Requires: openssh-server
 Requires: rootfiles
@@ -183,6 +183,7 @@ fi
 - Include netcat
 - Include dnf-plugins-core
 - Pull xen-hypervisor-elf, as xen-hypervisor since 4.20 only contains EFI binaries
+- Pull kernel as kernel-xcpng
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
