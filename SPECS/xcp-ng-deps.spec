@@ -102,6 +102,7 @@ Requires: xcp-ng-xapi-plugins
 Requires: xcp-rrdd
 # Requires: xen-crashdump-analyser
 Requires: xenopsd-cli
+Requires: xenopsd-xc
 # Requires: xenserver-status-report
 # Requires: xha
 Requires: xo-lite
