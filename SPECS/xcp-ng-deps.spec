@@ -75,10 +75,12 @@ Requires: linux-firmware
 # Requires: vendor-drivers
 
 # XAPI stack (many should instead be Req'd by other packages)
+Requires: xapi-core
 Requires: blktap
 # Requires: control-slice
 # XAPI chokes on nvidia GPUs without that package
 # Requires: gpumon
+Requires: guest-templates-json
 Requires: guest-templates-json-data-linux
 Requires: guest-templates-json-data-windows
 Requires: guest-templates-json-data-other
@@ -185,6 +187,7 @@ fi
 - Include dnf-plugins-core
 - Pull xen-hypervisor-elf, as xen-hypervisor since 4.20 only contains EFI binaries
 - Pull kernel as kernel-xcpng
+- Directly pull xapi-core guest-templates-json, only pulled in 8.3 by indirect ways
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
