@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        15
+Release:        16
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -202,6 +202,10 @@ Obsoletes: oprofile <= 0.9.9-25.el7_5.1
 # Obsolete packages no more installable
 Obsoletes: pyldb <= 1.5.4-2.el7
 
+# Obsolete packages no more used
+Obsoletes: ldns <= 1.7.0-21.1.xcpng8.3
+Obsoletes: unbound-libs <= 1.6.6-1.el7
+
 %description
 This package has dependencies to all the packages that make a XCP-ng server.
 
@@ -232,6 +236,10 @@ fi
 %files
 
 %changelog
+* Tue Sep 29 2026 Stefanos Gerangelos <stefanos.gerangelos@vates.tech> - 8.3-16
+- Obsolete ldns
+- Obsolete unbound-libs
+
 * Wed Jul 15 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-15
 - Obsolete pyldb (depending on python-tdb)
 
