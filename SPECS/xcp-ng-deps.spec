@@ -59,6 +59,9 @@ Requires: vim-minimal
 Requires: which
 Requires: zip
 
+# iptables-services-1.8.10-15.fc41 requires /usr/sbin/restorecon
+Requires: policycoreutils
+
 # deps that should live somewhere else
 Requires: cifs-utils
 Requires: iptables-legacy
@@ -177,7 +180,7 @@ fi
 %files
 
 %changelog
-* Fri Apr 17 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
+* Web Sep 30 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
 - Base for 9.0 based on Alma 10
 - Drop Obsoletes clauses
 - Drop duplicate Requires that are or were pulled from other packages
@@ -188,6 +191,7 @@ fi
 - Pull xen-hypervisor-elf, as xen-hypervisor since 4.20 only contains EFI binaries
 - Pull kernel as kernel-xcpng
 - Directly pull xapi-core guest-templates-json, only pulled in 8.3 by indirect ways
+- Directly pull policycoreutils, missing from iptables-services's deps
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
