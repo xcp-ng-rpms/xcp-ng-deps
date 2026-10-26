@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.3
-Release:        14
+Release:        15
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -71,7 +71,11 @@ Requires: policycoreutils
 Requires: portmap
 Requires: pyserial
 Requires: python-fasteners
-Requires: python2-xapi-storage
+
+# Update from python2 to python3
+Requires: python3-xapi-storage
+Obsoletes: python2-xapi-storage <= 2.7.5-92.1.xcpng8.3
+
 Requires: redhat-lsb-core
 Requires: redhat-lsb-submod-security
 Requires: rootfiles
@@ -229,6 +233,9 @@ fi
 %files
 
 %changelog
+* Mon Oct 26 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-15
+- Remove python2-xapi-storage no more used (since xapi builds with py3)
+
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
 
