@@ -1,6 +1,6 @@
 Name:           xcp-ng-deps
 Version:        8.99
-Release:        1
+Release:        2
 Summary:        A meta package pulling all needed dependencies for XCP-ng
 # License covers this spec file
 License:        GPLv2
@@ -69,6 +69,34 @@ Requires: efibootmgr
 # hardware support
 # Requires: aic94xx-firmware
 Requires: linux-firmware
+# EL10 only pulls these in as weak dependencies (Recommends). Require them
+# explicitly so the host does not depend on install_weak_deps: without weak
+# deps the package set drops from 803 to 539 (no texlive, matplotlib, ipython
+# pulled by python3-scapy) and these are what a host still needs.
+# Firmware split out of linux-firmware (NICs, GPUs used by dom0 console, CPU microcode):
+Requires: amd-ucode-firmware
+Requires: realtek-firmware
+Requires: amd-gpu-firmware
+Requires: intel-gpu-firmware
+Requires: nvidia-gpu-firmware
+# Wireless/audio firmware: kept to be conservative, likely droppable on a hypervisor
+Requires: atheros-firmware
+Requires: brcmfmac-firmware
+Requires: mt7xxx-firmware
+Requires: nxpwireless-firmware
+Requires: tiwilink-firmware
+Requires: intel-audio-firmware
+Requires: cirrus-audio-firmware
+# Filesystem and base tools
+Requires: e2fsprogs
+Requires: xfsprogs
+Requires: dosfstools
+Requires: diffutils
+Requires: jq
+Requires: pigz
+Requires: polkit
+Requires: tpm2-tools
+Requires: unbound-anchor
 # Requires: vendor-drivers
 
 # XAPI stack (many should instead be Req'd by other packages)
@@ -174,6 +202,11 @@ fi
 %files
 
 %changelog
+* Sun Oct 04 2026 Olivier Lambert <olivier.lambert@vates.tech> - 8.99-2
+- DEMONSTRATOR: explicitly require packages EL10 only pulls in as weak
+  dependencies (linux-firmware sub-packages, filesystem tools), so that
+  the installer can stop installing weak dependencies
+
 * Web Sep 30 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
 - Base for 9.0 based on Alma 10
 - Drop Obsoletes clauses
