@@ -171,10 +171,24 @@ if [ -e %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update ]; 
     fi
 fi
 
+changes=$(rpm --verify screen)
+if [ -z "$changes" ] ; then
+    echo "TODO: Revert screen hotfix for BZ#2385964 in xcp-ng-deps.spec"
+else
+    echo "TODO: Hotfixing screen: https://bugzilla.redhat.com/show_bug.cgi?id=2385964#c3"
+    rpm -q --qf '[%{FILEMODES:octal} %{FILEUSERNAME}:%{FILEGROUPNAME} %{FILENAMES}\n]' "screen" \
+        | while read -r modes owner path; do
+        chown --changes --no-dereference "$owner" "$path"  # Don't clear +s bit on links
+        [ -L "$path" ] || chmod --changes "${modes: -4}" "$path"  # Skip 2 first digits (for file types)
+    done
+    rpm --verify screen
+fi
+
 %files
 
 %changelog
 * Web Sep 30 2026 Yann Dirson <yann.dirson@vates.tech> - 8.99-1 WIP
+- Hotfix for screen packaging bug on perms/owners (BZ#2385964) (Philippe Coval)
 - Base for 9.0 based on Alma 10
 - Drop Obsoletes clauses
 - Drop duplicate Requires that are or were pulled from other packages
