@@ -156,6 +156,12 @@ packages needed by the newer version of XCP-ng.
 %post
 if [ $1 -gt 1 ]; then
     > %{_localstatedir}/lib/rpm-state/%{name}-%{version}-%{release}-update
+
+    echo 'https://bugzilla.redhat.com/show_bug.cgi?id=2385964'
+    stat -c '%G:%a' /run/screen \
+        && rpm --setugids screen \
+        && rpm --setperms screen \
+        && stat -c '%G:%a' /run/screen'
 fi
 
 %posttrans
