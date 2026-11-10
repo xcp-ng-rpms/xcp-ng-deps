@@ -59,14 +59,8 @@ Requires: vim-minimal
 Requires: which
 Requires: zip
 
-# iptables-services-1.8.10-15.fc41 requires /usr/sbin/restorecon
-Requires: policycoreutils
-
 # deps that should live somewhere else
 Requires: cifs-utils
-Requires: iptables-legacy
-Requires: iptables-services
-Requires: iptables-utils
 Requires: iscsi-initiator-utils
 # surely not only host-installer using it?
 Requires: chrony
@@ -191,7 +185,6 @@ fi
 - Pull xen-hypervisor-elf, as xen-hypervisor since 4.20 only contains EFI binaries
 - Pull kernel as kernel-xcpng
 - Directly pull xapi-core guest-templates-json, only pulled in 8.3 by indirect ways
-- Directly pull policycoreutils, missing from iptables-services's deps
 
 * Mon Mar 02 2026 Philippe Coval <philippe.coval@vates.tech> - 8.3-14
 - Require traceroute
